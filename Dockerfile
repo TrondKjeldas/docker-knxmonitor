@@ -1,5 +1,5 @@
 ##
-## knxd
+## knxmonitor
 ##
 
 ## Use latest Alpine based images as starting point
@@ -27,4 +27,4 @@ RUN apk add --no-cache git  \
 VOLUME /knxlogs
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["ip:gax58"]
+CMD ["ip:knxd"]
