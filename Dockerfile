@@ -15,8 +15,8 @@ RUN apk add --no-cache git  \
     && cd knxmonitor \
     && python setup.py build \
     && python setup.py install \
-    && addgroup -S knxmon \
-    && adduser -D -S -s /sbin/nologin -G knxmon knxmon \
+    && addgroup -g 1004 -S knxmon \
+    && adduser -D -S -s /sbin/nologin -u 1004 -G knxmon knxmon \
     && chmod a+x /entrypoint.sh \
     && apk del --no-cache git
 
@@ -27,4 +27,5 @@ RUN apk add --no-cache git  \
 VOLUME /knxlogs
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["ip:knxd"]
+#CMD ["ip:192.168.1.51"]
+CMD ["ip:TS-653B"]
