@@ -2,8 +2,12 @@
 # Configuration for knxmonitor/knxdecode/knxsonos
 
 # Common settings
-groupfile : "/knxlogs/groupaddresses.csv"
-unitfile  : "/knxlogs/enheter.xml"
+groupfile : "groupaddresses.csv"
+unitfile  : "enheter.xml"
+
 
 # Specific for knxmonitor
 fileformat : "old"
+dptfile: "groupaddresses.dptmap"
+
+push2influx: "TS-653B:8094"
